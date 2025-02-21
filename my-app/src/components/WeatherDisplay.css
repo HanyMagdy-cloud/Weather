@@ -1,0 +1,56 @@
+/* src/components/WeatherDetails.css */
+
+.details-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    justify-content: center; /* Center the cards */
+    margin: 20px 0;
+}
+
+.details-card {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Colorful gradient background */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 200px; /* Allow cards to grow and shrink, with a base width */
+    max-width: 250px; /* Set a maximum width for the cards */
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #fff; /* White text color */
+    text-align: center; /* Center the text */
+}
+
+.details-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
+.details-card h3 {
+    margin: 0 0 15px;
+    font-size: 1.5em; /* Larger font size for heading */
+}
+
+.details-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+.details-card li {
+    padding: 10px 0;
+    font-size: 1.1em; /* Slightly larger font size for list items */
+}
+
+.details-card img {
+    width: 60px; /* Increased icon size */
+    height: auto;
+    margin-top: 10px; /* Add space above the icon */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .details-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center; /* Center cards */
+    }
+}
