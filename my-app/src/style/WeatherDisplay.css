@@ -1,0 +1,32 @@
+/* Weather Display Card */
+.weather-card {
+    background: linear-gradient(309deg, #3071b7d9, #d8d9e5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .weather-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Weather Image */
+  .weather-card img {
+    width: 130px;
+    margin-top: 10px;
+  }
+  
+  /* Text Styling */
+  .weather-card p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+  
