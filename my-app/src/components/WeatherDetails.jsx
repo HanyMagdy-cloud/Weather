@@ -11,23 +11,32 @@ const WeatherDetails = ({ city }) => {
   useEffect(() => {
     const getForecast = async () => {
       try {
-        const data = await fetchWeatherForecast(city); // Fetch 5-day weather forecast
-        setForecast(data.list); // Update state with forecast data
+        const data = await fetchWeatherForecast(city);
+        setForecast(data.list);
       } catch (err) {
-        setError(err.message); // Handle errors
+        setError(err.message);
       }
     };
 
-    getForecast(); // Call function to fetch forecast
-  }, [city]); // Re-fetch forecast when city changes
+    getForecast();
+  }, [city]);
 
   if (error) return <div>Error: {error}</div>;
   if (!forecast.length) return <div>Loading forecast...</div>;
 
-  // Extract unique daily forecasts (one per day)
+  // Get today's date
+  const today = new Date().toLocaleDateString();
+
+  // Filter out forecasts for today
+  const nextDaysForecast = forecast.filter((item) => {
+    const date = new Date(item.dt * 1000).toLocaleDateString();
+    return date !== today;
+  });
+
+  // Extract unique daily forecasts (one per day) from the next days.
   const dailyForecast = [];
-  forecast.forEach((item) => {
-    const date = new Date(item.dt * 1000).toLocaleDateString(); //converts a timestamp from the API into a human-readable date
+  nextDaysForecast.forEach((item) => {
+    const date = new Date(item.dt * 1000).toLocaleDateString();
     const icon = item.weather[0].icon;
     const tempMin = item.main.temp_min;
     const tempMax = item.main.temp_max;
@@ -45,7 +54,6 @@ const WeatherDetails = ({ city }) => {
         icon,
         windSpeed,
         windDirection,
-        
       });
     }
   });
@@ -65,8 +73,6 @@ const WeatherDetails = ({ city }) => {
             <li>🌞 Max: {day.tempMax} °C</li>
             <li>🍃 Wind Speed: {day.windSpeed} m/s</li>
             <li>🧭 Wind Direction: {day.windDirection}°</li>
-            
-
           </ul>
         </div>
       ))}
