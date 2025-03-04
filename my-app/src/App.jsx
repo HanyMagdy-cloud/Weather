@@ -29,6 +29,10 @@ const App = () => {
   };
 
   // Function to add the current city to favorites
+  
+  //creates a new array that includes all the elements from the existing favoriteCities array 
+  // and adds the new city to the end. The spread syntax (...) is used to create a shallow copy of the array.
+
   const handleAddFavorite = () => {
     if (city && !favoriteCities.includes(city)) {
       setFavoriteCities([...favoriteCities, city]);
