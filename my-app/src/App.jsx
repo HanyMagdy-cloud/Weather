@@ -29,8 +29,8 @@ const App = () => {
   };
 
   // Function to add the current city to favorites
-  
-  //creates a new array that includes all the elements from the existing favoriteCities array 
+
+  //creates a new array that includes all the elements from the existing favoriteCities array
   // and adds the new city to the end. The spread syntax (...) is used to create a shallow copy of the array.
 
   const handleAddFavorite = () => {
@@ -52,7 +52,6 @@ const App = () => {
   return (
     <div className="App">
       <h1>Weather App</h1>
-      
 
       {/* Search Form */}
       <form onSubmit={handleSearch}>

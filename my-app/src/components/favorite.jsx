@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CityService } from './cityService';
 
-const cities = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'];
+let cities = [];
 const cityService = new CityService(cities);
 
 const FavoriteCitySelector = () => {

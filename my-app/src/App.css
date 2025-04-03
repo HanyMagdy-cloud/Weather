@@ -3,10 +3,15 @@
   text-align: center;
   font-family: 'Poppins', sans-serif; /* Modern and clean font */
   /*background: linear-gradient(135deg, #307fb7, #9a5946cf, #ffdde1);*/
-  background: url('../src/assets/images/tree2.webp') no-repeat center center fixed;
+  /*background-image: url('/tree2.webp'); */
+  /*background-image: url('/tree2.webp');*/ 
+  background-image: url('/image.jpg');
+
   background-size: cover;
+  background-position: center;
+
   min-height: 100vh;
-  padding: 20px;
+  padding: 19px;
   color: whitesmoke;
 }
 

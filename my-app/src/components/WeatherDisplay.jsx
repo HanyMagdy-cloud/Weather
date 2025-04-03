@@ -26,7 +26,7 @@ const WeatherDisplay = ({ city }) => {
 
     return (
         <div className="weather-card">
-            <h2>🌍 Current Weather in {weather.name}</h2>
+            <h2>🌍 Current Weather in {weather.name}</h2>  
             <p> 📅 Date & Time: {new Date(weather.dt * 1000).toLocaleString()}</p>
             <p>🌡️ Temperature: {weather.main.temp} °C</p>
             <p>⛅ Condition: {weather.weather[0].description}</p>
