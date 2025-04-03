@@ -64,5 +64,5 @@ jobs:
         with:
           app-name: 'hanymagdy-weather'
           slot-name: 'Production'
-          package: .
+          package: dist/
           
